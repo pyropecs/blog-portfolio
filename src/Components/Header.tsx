@@ -1,19 +1,32 @@
 import React, { ComponentProps } from "react";
-import NavBar from "@/Components//Links";
+import NavBar from "@/Components/NavLinks";
+type logoProps = {
+  children: React.ReactNode;
+};
+type headerProps = {
+  navLinks: {
+    title: string;
+    link: string;
+  }[];
+};
 
-export default function Header() {
+const Logo = ({ children }: logoProps) => {
+  return <>{children}</>;
+};
+
+export default function Header({ navLinks }: headerProps) {
   // this component contains logo and bunch of links to refer other routing pages
-  type links = string[];
-  const routes: links = ["resume", "contact", "projects"];
 
   return (
-    <header className="border border-white h-16 w-screen">
-      <div className="logo w-9 border border-white">
-        <h1 className="font-bold capitalize">pyropecs</h1>
-      </div>
+    <header className=" flex justify-between h-16 w-screen">
+      <Logo>
+        <div className="logo w-24  flex items-center m-2">
+          <h1 className="text-3xl capitalize p-3">pyropecs</h1>
+        </div>
+      </Logo>
 
-      <nav className="capitalize">
-        <NavBar routeLinks={routes} />
+      <nav className="capitalize flex justify-between items-center">
+        <NavBar routeLinks={navLinks} />
       </nav>
     </header>
   );

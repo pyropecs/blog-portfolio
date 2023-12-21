@@ -1,0 +1,16 @@
+{
+  "routes": {
+    "resume": {
+      "title": "Resume",
+      "link": "/resume"
+    },
+    "contact": {
+      "title": "Contact me",
+      "link": "/contact"
+    },
+    "projects": {
+      "title": "Projects",
+      "link": "/projects"
+    }
+  }
+}
